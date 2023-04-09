@@ -18,14 +18,12 @@ def text_to_speech(text:str):
     myobj = gTTS(text=text, lang=language, slow=False)
 
     # Saving the converted audio in a mp3 file named
-    # welcome
-    myobj.save("welcome.mp3")
+    mp3_name = str(time.time()) + ".mp3"
+    myobj.save(mp3_name)
 
     # Playing the converted file
 
-    # os.system("mpg321 welcome.mp3")
-
-    playsound('welcome.mp3')  
+    playsound(mp3_name)  
 
 button_pin = 14
 GPIO.setwarnings(False)
